@@ -1,0 +1,266 @@
+
+:root {
+    --primary-green: #3a5a40;
+    --secondary-green: #588157;
+    --light-green: #a3b18a;
+    --cream: #f8f9fa;
+    --dark-text: #2b2d42;
+    --accent: #e9c46a;
+}
+
+body {
+    font-family:  'Montserrat', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--cream);
+    line-height: 1.6;
+    background-image: url(img/home/texture2.png);
+}
+
+h1, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+h2 {
+    ont-family: 'Montserrat', sans-serif; 
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    letter-spacing: 1px;
+}
+
+.sub-brand {
+    font-size: 1rem;
+    color: var(--secondary-green);
+    margin-top: -0.5rem;
+}
+
+.nav-menu-item .nav-link {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu-item .nav-link:hover {
+    color: var(--secondary-green);
+}
+
+.nav-menu-item .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--light-green);
+    transition: width 0.3s ease;
+}
+
+.nav-menu-item .nav-link:hover::after {
+    width: 100%;
+}
+
+.title-style {
+    color: var(--cream);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--primary-green);;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+.line {
+    width: 8%;
+    background-color: #00660C;
+    height: 0.5vh;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.description p {
+    font-size: 15px;
+    color: var(--dark-text);
+    text-align: justify;
+}
+
+.gallery-container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px; 
+    grid-auto-flow: dense;
+    gap: 6px;
+    width: 100%; 
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+}
+
+.gallery img.four-grid-cells {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.gallery img.wide-image {
+    grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery img.four-grid-cells,
+    .gallery img.wide-image {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery img.four-grid-cells,
+    .gallery img.wide-image {
+        grid-column: span 1;
+    }
+}
+
+footer {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--light-green);
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-section img {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+}
+
+.opening-hours {
+    display: flex;
+}
+
+.closed p:first-child {
+    color: #ff6b6b;
+}
+
+hr {
+    border-color: rgba(255,255,255,0.1);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        margin-right: 0;
+    }
+    
+    .playfair-display {
+        font-size: 2.2rem;
+    }
+    
+    .gallery-item {
+        height: 250px;
+    }
+    
+    .gallery-caption {
+        transform: translateY(0);
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        min-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .opening-hours {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .brand {
+        font-size: 2rem;
+    }
+    
+    .sub-brand {
+        font-size: 0.9rem;
+    }
+    
+    .nav-menu-item .nav-link {
+        font-size: 0.9rem;
+    }
+}
